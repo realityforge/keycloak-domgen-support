@@ -35,40 +35,39 @@ final class JndiUtil
       final String key = pair.getName();
       final String subpath = path + "/" + key;
       final Object value = context.lookup( subpath );
-      final String type = pair.getClassName();
-      if ( null == type )
+      if ( null == value )
       {
         object.addNull( key );
       }
-      else if ( String.class.getName().equals( type ) )
+      else if ( String.class.isInstance( value ) )
       {
         object.add( key, (String) value );
       }
-      else if ( Boolean.class.getName().equals( type ) )
+      else if ( Boolean.class.isInstance( value ) )
       {
         object.add( key, (Boolean) value );
       }
-      else if ( Integer.class.getName().equals( type ) )
+      else if ( Integer.class.isInstance( value ) )
       {
         object.add( key, (Integer) value );
       }
-      else if ( Short.class.getName().equals( type ) )
+      else if ( Short.class.isInstance( value ) )
       {
         object.add( key, (Short) value );
       }
-      else if ( Long.class.getName().equals( type ) )
+      else if ( Long.class.isInstance( value ) )
       {
         object.add( key, (Long) value );
       }
-      else if ( Float.class.getName().equals( type ) )
+      else if ( Float.class.isInstance( value ) )
       {
         object.add( key, (Float) value );
       }
-      else if ( Double.class.getName().equals( type ) )
+      else if ( Double.class.isInstance( value ) )
       {
         object.add( key, (Double) value );
       }
-      else if ( Context.class.getName().equals( type ) )
+      else if ( Context.class.isInstance( value ) )
       {
         final Context subcontext = (Context) value;
         object.add( key, buildJsonFromContext( subcontext, subpath ) );
