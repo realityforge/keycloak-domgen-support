@@ -12,6 +12,9 @@ import org.keycloak.adapters.KeycloakDeployment;
 import org.keycloak.adapters.KeycloakDeploymentBuilder;
 import org.keycloak.adapters.OIDCHttpFacade;
 
+/**
+ * Abstract class from which domgen resolver is generated.
+ */
 public abstract class AbstractJndiBasedKeycloakConfigResolver
   implements KeycloakConfigResolver
 {
