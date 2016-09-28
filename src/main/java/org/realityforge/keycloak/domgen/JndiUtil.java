@@ -12,7 +12,7 @@ import javax.naming.NamingException;
 /**
  * Utility class for building json that represents jndi context.
  */
-final class JndiUtil
+public final class JndiUtil
 {
   private JndiUtil()
   {
@@ -23,7 +23,7 @@ final class JndiUtil
    * nested JsonObject instances.
    */
   @Nonnull
-  static JsonObject buildJsonFromContext( @Nonnull final Context context, @Nonnull final String path )
+  public static JsonObject buildJsonFromContext( @Nonnull final Context context, @Nonnull final String path )
     throws NamingException
   {
     final JsonObjectBuilder object = Json.createObjectBuilder();
