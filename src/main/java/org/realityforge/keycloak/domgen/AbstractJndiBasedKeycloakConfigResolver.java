@@ -24,6 +24,8 @@ public abstract class AbstractJndiBasedKeycloakConfigResolver
   @Nonnull
   protected abstract String getRootJndiPath();
 
+  protected abstract void customizeConfiguration( @Nonnull JsonObjectBuilder builder );
+
   @Override
   public KeycloakDeployment resolve( final OIDCHttpFacade.Request request )
   {
@@ -52,6 +54,7 @@ public abstract class AbstractJndiBasedKeycloakConfigResolver
     {
       final JsonObjectBuilder builder = Json.createObjectBuilder();
       JndiUtil.buildJsonFromContext( builder, new InitialContext(), getRootJndiPath() );
+      customizeConfiguration( builder );
 
       final ByteArrayOutputStream baos = new ByteArrayOutputStream();
       Json.createWriter( baos ).write( builder.build() );
