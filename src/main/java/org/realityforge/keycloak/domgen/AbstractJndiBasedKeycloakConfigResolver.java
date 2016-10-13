@@ -5,7 +5,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.annotation.Nonnull;
 import javax.json.Json;
-import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
 import javax.naming.InitialContext;
 import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.KeycloakDeployment;
@@ -50,10 +50,11 @@ public abstract class AbstractJndiBasedKeycloakConfigResolver
   {
     try
     {
-      final JsonObject object = JndiUtil.buildJsonFromContext( new InitialContext(), getRootJndiPath() );
+      final JsonObjectBuilder builder = Json.createObjectBuilder();
+      JndiUtil.buildJsonFromContext( builder, new InitialContext(), getRootJndiPath() );
 
       final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-      Json.createWriter( baos ).write( object );
+      Json.createWriter( baos ).write( builder.build() );
       baos.close();
       return KeycloakDeploymentBuilder.build( new ByteArrayInputStream( baos.toByteArray() ) );
     }
