@@ -1,6 +1,5 @@
 require 'buildr/git_auto_version'
 require 'buildr/gpg'
-require 'buildr/custom_pom'
 
 desc 'KeyCloak Domgen Support'
 define 'keycloak-domgen-support' do
