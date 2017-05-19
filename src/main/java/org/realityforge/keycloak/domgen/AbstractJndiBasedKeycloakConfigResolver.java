@@ -27,7 +27,7 @@ public abstract class AbstractJndiBasedKeycloakConfigResolver
   protected abstract void customizeConfiguration( @Nonnull JsonObjectBuilder builder );
 
   @Override
-  public KeycloakDeployment resolve( final OIDCHttpFacade.Request request )
+  public KeycloakDeployment resolve( @Nonnull final OIDCHttpFacade.Request request )
   {
     _lock.readLock().lock();
     if ( null != _deployment )
