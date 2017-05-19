@@ -30,11 +30,17 @@ public abstract class AbstractJndiBasedKeycloakConfigResolver
   public KeycloakDeployment resolve( @Nonnull final OIDCHttpFacade.Request request )
   {
     _lock.readLock().lock();
-    if ( null != _deployment )
+    try
     {
-      return _deployment;
+      if ( null != _deployment )
+      {
+        return _deployment;
+      }
     }
-    _lock.readLock().unlock();
+    finally
+    {
+      _lock.readLock().unlock();
+    }
     _lock.writeLock().lock();
     try
     {
