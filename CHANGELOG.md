@@ -2,6 +2,8 @@
 
 ### Unreleased
 
+* Update to keycloak version `11.0.0`
+
 ### [v1.4](https://github.com/realityforge/keycloak-domgen-support/tree/v1.4) (2017-05-19) · [Full Changelog](https://github.com/realityforge/keycloak-domgen-support/compare/v1.3...v1.4)
 
 * Ensure lock is released by adding it to final lock.
