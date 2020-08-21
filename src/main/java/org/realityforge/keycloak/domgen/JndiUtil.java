@@ -51,35 +51,35 @@ public final class JndiUtil
       {
         builder.addNull( key );
       }
-      else if ( String.class.isInstance( value ) )
+      else if ( value instanceof String )
       {
         builder.add( key, (String) value );
       }
-      else if ( Boolean.class.isInstance( value ) )
+      else if ( value instanceof Boolean )
       {
         builder.add( key, (Boolean) value );
       }
-      else if ( Integer.class.isInstance( value ) )
+      else if ( value instanceof Integer )
       {
         builder.add( key, (Integer) value );
       }
-      else if ( Short.class.isInstance( value ) )
+      else if ( value instanceof Short )
       {
         builder.add( key, (Short) value );
       }
-      else if ( Long.class.isInstance( value ) )
+      else if ( value instanceof Long )
       {
         builder.add( key, (Long) value );
       }
-      else if ( Float.class.isInstance( value ) )
+      else if ( value instanceof Float )
       {
         builder.add( key, (Float) value );
       }
-      else if ( Double.class.isInstance( value ) )
+      else if ( value instanceof Double )
       {
         builder.add( key, (Double) value );
       }
-      else if ( Context.class.isInstance( value ) )
+      else if ( value instanceof Context )
       {
         final Context subcontext = (Context) value;
         builder.add( key, buildJsonFromContext( subcontext, subpath ) );
