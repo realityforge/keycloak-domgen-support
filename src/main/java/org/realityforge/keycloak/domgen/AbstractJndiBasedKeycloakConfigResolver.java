@@ -18,7 +18,7 @@ import org.keycloak.adapters.OIDCHttpFacade;
 public abstract class AbstractJndiBasedKeycloakConfigResolver
   implements KeycloakConfigResolver
 {
-  private ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
+  private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
   private KeycloakDeployment _deployment;
 
   @Nonnull
