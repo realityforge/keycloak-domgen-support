@@ -1,6 +1,6 @@
 # Change Log
 
-### Unreleased
+### [v1.5](https://github.com/realityforge/keycloak-domgen-support/tree/v1.5) (2020-08-21) · [Full Changelog](https://github.com/realityforge/giggle/compare/v1.4...v1.5)
 
 * Update to keycloak version `11.0.0`
 
