@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.json.Json;
 import javax.json.JsonObjectBuilder;
 import javax.naming.InitialContext;
@@ -18,7 +19,9 @@ import org.keycloak.adapters.OIDCHttpFacade;
 public abstract class AbstractJndiBasedKeycloakConfigResolver
   implements KeycloakConfigResolver
 {
+  @Nonnull
   private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
+  @Nullable
   private KeycloakDeployment _deployment;
 
   @Nonnull
