@@ -14,7 +14,7 @@ define 'keycloak-domgen-support' do
 
   pom.add_apache_v2_license
   pom.add_github_project('realityforge/keycloak-domgen-support')
-  pom.add_developer('realityforge', 'Peter Donald', 'peter@realityforge.org', ['Developer'])
+  pom.add_developer('realityforge', 'Peter Donald')
 
   compile.with :javaee_api, :jsr305_annotations, :keycloak_core, :keycloak_adapter_core, :keycloak_adapter_spi
 
