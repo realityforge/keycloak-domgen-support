@@ -1,6 +1,8 @@
 require 'buildr/git_auto_version'
 require 'buildr/gpg'
 
+Buildr::MavenCentral.define_publish_tasks(:profile_name => 'org.realityforge', :username => 'realityforge')
+
 desc 'KeyCloak Domgen Support'
 define 'keycloak-domgen-support' do
   project.group = 'org.realityforge.keycloak.domgen'
