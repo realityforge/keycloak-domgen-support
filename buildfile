@@ -10,7 +10,7 @@ define 'keycloak-domgen-support' do
   compile.options.target = '1.8'
   compile.options.lint = 'all'
   project.compile.options.warnings = true
-  project.compile.options.other = %w(-Werror -Xmaxerrs 10000 -Xmaxwarns 10000)
+  project.compile.options.other = %w(-Xmaxerrs 10000 -Xmaxwarns 10000)
 
   project.version = ENV['PRODUCT_VERSION'] if ENV['PRODUCT_VERSION']
 
