@@ -2,6 +2,7 @@
 
 ### Unreleased
 
+* Update the `org.realityforge.javax.annotation` artifact to version `1.1.1`.
 * Upgrade the `au.com.stocksoftware.idea.codestyle` artifact to version `1.17`.
 
 ### [v1.5](https://github.com/realityforge/keycloak-domgen-support/tree/v1.5) (2020-08-21) · [Full Changelog](https://github.com/realityforge/keycloak-domgen-support/compare/v1.4...v1.5)
